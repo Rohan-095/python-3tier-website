@@ -73,7 +73,7 @@ jobs:
       - name: Get current frontend task definition
         run: |
           aws ecs describe-task-definition \
-            --task-definition "$FRONTEND_SERVICE" \
+            --task-definition notes-frontend \
             --region "$AWS_REGION" \
             --query taskDefinition > frontend-task-definition.json
 
@@ -91,7 +91,7 @@ jobs:
       - name: Get current backend task definition
         run: |
           aws ecs describe-task-definition \
-            --task-definition "$BACKEND_SERVICE" \
+            --task-definition notes-backend \
             --region "$AWS_REGION" \
             --query taskDefinition > backend-task-definition.json
 
