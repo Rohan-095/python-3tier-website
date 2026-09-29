@@ -1,0 +1,30 @@
+:root {
+  --bg: #eef1f4; --surface: #fff; --ink: #16212c; --muted: #66727f;
+  --line: #d5dbe1; --accent: #0f6e78; --danger: #b3261e;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0f1418; --surface: #182027; --ink: #e8edf1; --muted: #93a0ac; --line: #2a343d; --accent: #4fc0cb; --danger: #ff8a80; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+.page { max-width: 640px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+h1 { font-size: 2rem; margin: 0 0 1.5rem; letter-spacing: -0.02em; }
+.editor { display: grid; gap: .75rem; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 1rem; }
+input, textarea { width: 100%; font: inherit; color: inherit; background: transparent; border: 1px solid var(--line); border-radius: 6px; padding: .6rem .7rem; }
+textarea { resize: vertical; }
+input:focus-visible, textarea:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.actions { display: flex; gap: .5rem; }
+button { font: inherit; color: var(--ink); background: transparent; border: 1px solid var(--line); border-radius: 6px; padding: .4rem .85rem; cursor: pointer; }
+button:hover { border-color: var(--accent); }
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+@media (prefers-color-scheme: dark) { button.primary { color: #0b1114; } }
+button.danger { color: var(--danger); }
+.list { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: .75rem; }
+.list li { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 1rem 1.1rem; }
+.list h2 { font-size: 1.1rem; margin: 0 0 .25rem; }
+.list p { margin: 0 0 .75rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+.meta { display: flex; justify-content: space-between; align-items: center; gap: .5rem; flex-wrap: wrap; color: var(--muted); font-size: .85rem; }
+.meta button { margin-left: .4rem; padding: .25rem .6rem; font-size: .85rem; }
+.error { color: var(--danger); margin-top: 1rem; }
+.muted { color: var(--muted); margin-top: 1rem; }
